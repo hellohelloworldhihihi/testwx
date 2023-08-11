@@ -130,6 +130,14 @@ def send_message(to_user, access_token, region_name, weather, temp, wind_dir, no
     love_date = date(love_year, love_month, love_day)
     # 获取在一起的日期差
     love_days = str(today.__sub__(love_date)).split(" ")[0]
+ 
+    # 获取出发时间的日期格式
+    arrive_year = int(config["arrive_date"].split("-")[0])
+    arrive_month = int(config["arrive_date"].split("-")[1])
+    arrive_day = int(config["arrive_date"].split("-")[2])
+    arrive_date = date(arrive_year, arrive_month, arrive_day)
+    # 获取到达日和现在的日期差
+    arrive_days = str(today.__sub__(arrive_date)).split(" ")[0]
     # 获取所有生日数据
     birthdays = {}
     for k, v in config.items():
@@ -173,8 +181,8 @@ def send_message(to_user, access_token, region_name, weather, temp, wind_dir, no
                 "value": note_ch,
                 "color": get_color()
             },
-            "arrive_data": {
-                "value": arrive_data,
+            "arrive_day": {
+                "value": arrive_days,
                 "color": get_color()
             }
         }
