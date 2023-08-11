@@ -152,7 +152,7 @@ def send_message(to_user, access_token, region_name, weather, temp, wind_dir, no
         "topcolor": "#FF0000",
         "data": {
             "date": {
-                "value": "{},星期{}".format(today, week),
+                "value": today,
                 "color": get_color()
             },
             "region": {
