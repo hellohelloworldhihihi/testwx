@@ -65,6 +65,7 @@ def get_weather(region):
     key = config["weather_key"]
     region_url = "https://geoapi.qweather.com/v2/city/lookup?location={}&key={}".format(region, key)
     response = get(region_url, headers=headers).json()
+    print("API响应内容:", response)  # 添加这一行以输出API响应内容
 
     if "location" not in response or not response["location"]:
         print("无法获取地区信息，请检查 API 响应")
