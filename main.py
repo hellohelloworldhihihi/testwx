@@ -157,6 +157,14 @@ def send_message(to_user, access_token, region_name, weather, temp, wind_dir, no
     love_date = date(love_year, love_month, love_day)
     # 获取在一起的日期差
     love_days = str(today.__sub__(love_date)).split(" ")[0]
+
+   # 获取分手的日子的日期格式
+    fen_year = int(config["fen_date"].split("-")[0])
+    fen_month = int(config["fen_date"].split("-")[1])
+    fen_day = int(config["fen_date"].split("-")[2])
+    fen_date = date(fen_year, fen_month, fen_day)
+    # 获取在一起的日期差
+    fen_days = str(today.__sub__(fen_date)).split(" ")[0]
  
     # 获取出发时间的日期格式
     arrive_year = int(config["arrive_date"].split("-")[0])
