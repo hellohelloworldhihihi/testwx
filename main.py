@@ -163,7 +163,7 @@ def send_message(to_user, access_token, region_name, weather, temp, wind_dir, no
     fen_month = int(config["fen_date"].split("-")[1])
     fen_day = int(config["fen_date"].split("-")[2])
     fen_date = date(fen_year, fen_month, fen_day)
-    # 获取在一起的日期差
+    # 获取分手的日子的日期差
     fen_days = str(today.__sub__(fen_date)).split(" ")[0]
  
     # 获取出发时间的日期格式
@@ -217,8 +217,8 @@ def send_message(to_user, access_token, region_name, weather, temp, wind_dir, no
                 "value": note_en,
                 "color": get_color()
             },
-            "note_ch": {
-                "value": note_ch,
+            "fen_days": {
+                "value": fen_days,
                 "color": get_color()
             }
         }
